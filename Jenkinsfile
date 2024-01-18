@@ -1,13 +1,13 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent any
+    parameters {
+        string(name: 'greet', defaultValue: 'Hello', description: '')
+    }
     stages {
         stage('build') {
             environment {
                 message = "building ..."
-            }
-            parameters {
-                string(name: 'greet', defaultValue: 'Hello', description: '')
             }
             steps {
                 echo "${env.message}"
