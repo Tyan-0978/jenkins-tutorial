@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "${env.message}"
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo $params.greet world
+                echo "${params.greet} world"
                 sh "ls /"
             }
         }
