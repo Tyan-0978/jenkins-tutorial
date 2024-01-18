@@ -7,7 +7,7 @@ pipeline {
                 message = "building ..."
             }
             steps {
-                echo ${env.message}
+                echo "${env.message}"
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh "ls"
             }
