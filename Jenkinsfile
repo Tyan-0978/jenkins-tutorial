@@ -1,7 +1,7 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
     agent {
-        docker { image python:3.12-bookworm }
+        docker { image 'python:3.12-bookworm' }
     }
     parameters {
         string(name: 'greet', defaultValue: 'Hello', description: '')
