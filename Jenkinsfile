@@ -14,13 +14,21 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "${params.greet} world"
                 echo "Test scan"
-                sh "ls /"
             }
         }
         stage('run') {
             steps {
-                python script.py
+                echo 'Run stage'
+                echo $abc
             }
+        }
+    }
+    post {
+        always {
+            echo 'End pipeline'
+        }
+        failure {
+            echo 'Pipeline failed'
         }
     }
 }
