@@ -17,5 +17,10 @@ pipeline {
                 sh "ls /"
             }
         }
+        stage('run') {
+            steps {
+                python script.py
+            }
+        }
     }
 }
