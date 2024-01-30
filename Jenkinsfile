@@ -12,8 +12,10 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-        script { 
-            greet(name: "world")
+        stage('greet') {
+            steps {
+                echo "Hello"
+            }
         }
     }
     post {
